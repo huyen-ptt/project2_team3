@@ -15,6 +15,14 @@ public class AlertMessage {
 
     private Alert alert;
 
+    public static void showAlert(String title, String message) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     public void errorMessage(String message) {
         alert = new Alert(AlertType.ERROR);
         alert.setTitle("Error message");

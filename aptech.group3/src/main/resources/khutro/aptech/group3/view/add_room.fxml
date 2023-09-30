@@ -16,16 +16,16 @@
                 <Label layoutX="30.0" layoutY="30.0" styleClass="b, h4" text="Add Room" />
                 <!--Left-->
                 <Label layoutX="30.0" layoutY="100.0" text="Name:" />
-                <TextField layoutX="30.0" layoutY="120.0" prefHeight="25.0" prefWidth="200.0" promptText="Nhập tên phòng..." />
+                <TextField fx:id="nameTextField" layoutX="30.0" layoutY="120.0" prefHeight="25.0" prefWidth="200.0" promptText="Nhập tên phòng..." />
 
                 <Label layoutX="30.0" layoutY="160.0" text="Giá:" />
-                <TextField layoutX="30.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Nhập giá phòng..." />
+                <TextField fx:id="priceTextField" layoutX="30.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Nhập giá phòng..." />
 
                 <Label layoutX="30.0" layoutY="220.0" text="Số lượng người ở:" />
-                <TextField layoutX="30.0" layoutY="240.0" prefHeight="25.0" prefWidth="200.0" promptText="Nhập số lượng người..." />
+                <TextField fx:id="occupancyTextField" layoutX="30.0" layoutY="240.0" prefHeight="25.0" prefWidth="200.0" promptText="Nhập số lượng người..." />
 
                 <Label layoutX="30.0" layoutY="300.0" text="Trạng thái:" />
-                <ChoiceBox layoutX="101.0" layoutY="292.0" style=" -fx-background-color: #D2E0FB;" value="Chưa thuê">
+                <ChoiceBox fx:id="statusChoiceBox" layoutX="101.0" layoutY="292.0" style=" -fx-background-color: #D2E0FB;" value="Chưa thuê">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="Chưa thuê" />
@@ -37,10 +37,10 @@
                     </padding>
                 </ChoiceBox>
 
-                <Button layoutX="30.0" layoutY="350.0" mnemonicParsing="false" styleClass="btn-primary" text="Upload images" />
+                <Button fx:id="buttonUploadFiles" layoutX="30.0" layoutY="350.0" mnemonicParsing="false" styleClass="btn-primary" text="Upload images" />
                 <!--Right-->
                 <Label layoutX="420.0" layoutY="100.0" text="Kiểu trọ:" />
-                <ChoiceBox layoutX="481.0" layoutY="92.0" style=" -fx-background-color: #D2E0FB;" value="Trọ bình dân">
+                <ChoiceBox fx:id="typeChoiceBox" layoutX="481.0" layoutY="92.0" style=" -fx-background-color: #D2E0FB;" value="Trọ bình dân">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="Trọ bình dân" />
@@ -55,12 +55,12 @@
                 </ChoiceBox>
 
                 <Label layoutX="420.0" layoutY="160.0" text="Địa chỉ:" />
-                <TextField layoutX="420.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Thanh Xuân - Hà Nội...." />
+                <TextField fx:id="addressTextField" layoutX="420.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Thanh Xuân - Hà Nội...." />
                 <Label layoutX="420.0" layoutY="220.0" text="Mô tả:" />
-                <TextArea layoutX="420.0" layoutY="240.0" prefHeight="130.0" prefWidth="250.0" promptText="Phong cách thiết kế hiện đại, tiện nghi công năng đầy đủ, Wc riêng biệt cho mỗi phòng...." />
+                <TextArea fx:id="descriptionTextArea" layoutX="420.0" layoutY="240.0" prefHeight="130.0" prefWidth="250.0" promptText="Phong cách thiết kế hiện đại, tiện nghi công năng đầy đủ, Wc riêng biệt cho mỗi phòng...." />
 
                 <!--Submit-->
-                <Button layoutX="30.0" layoutY="550.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" text="Lưu thông tin" styleClass="btn-danger" />
+                <Button fx:id="buttonSubmit" onAction="#Submit" layoutX="30.0" layoutY="550.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" text="Lưu thông tin" styleClass="btn-danger" />
 
 
             </Pane>

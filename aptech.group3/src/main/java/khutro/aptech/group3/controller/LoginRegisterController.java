@@ -130,7 +130,7 @@ public class LoginRegisterController implements Initializable {
                 if (result.next()) {
 //                    alert.successMessage("You've signed up");
 
-                    App.setRoot("dashboard");
+                    App.setRoot("home");
                     //HIDE WINDOW OF LOGIN FORM
 //                    login_btn.getScene().getWindow().hide();
 
@@ -187,19 +187,14 @@ public class LoginRegisterController implements Initializable {
                     alert.errorMessage(signup_username.getText() + " is already taken");
                 } else {
                     String insertData = "INSERT INTO user "
-                            + "(name, phone, username, password, created_time) "
-                            + "VALUES(?,?,?,?,?)";
+                            + "(name, phone, username, password) "
+                            + "VALUES(?,?,?,?)";
 
                     prepare = connect.prepareStatement(insertData);
                     prepare.setString(1, signup_name.getText());
                     prepare.setString(2, signup_phone.getText());
                     prepare.setString(3, signup_username.getText());
                     prepare.setString(4, signup_password.getText());
-
-                    Date date = new Date(0);
-                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-
-                    prepare.setString(5, String.valueOf(sqlDate));
 
                     prepare.executeUpdate();
 
