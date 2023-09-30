@@ -1,0 +1,56 @@
+/**
+* Author:  Group 3
+* Created: Sep 23, 2023
+*/
+
+CREATE DATABASE IF NOT EXISTS khutro;
+
+USE khutro;
+
+-- Tạo bảng User nếu nó chưa tồn tại
+CREATE TABLE IF NOT EXISTS User (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    name NVARCHAR(255) NOT NULL,
+    role ENUM('Admin', 'Customer') NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Tạo bảng Room nếu nó chưa tồn tại
+CREATE TABLE IF NOT EXISTS Room (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    room_name NVARCHAR(255) NOT NULL,
+    room_description TEXT NOT NULL,
+    price FLOAT NOT NULL,
+    max_occupancy INT NOT NULL,
+    status ENUM('DaThue', 'ChuaThue') NOT NULL,
+    address TEXT NOT NULL,
+    room_area DOUBLE NOT NULL,
+    type ENUM('KyTucXa', 'Tro', 'ChungCu') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Tạo bảng RoomImages nếu nó chưa tồn tại
+CREATE TABLE IF NOT EXISTS RoomImages (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    room_id INT NOT NULL,
+    image_path TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (room_id) REFERENCES Room(id)
+);
+
+CREATE TABLE IF NOT EXISTS Contact (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+

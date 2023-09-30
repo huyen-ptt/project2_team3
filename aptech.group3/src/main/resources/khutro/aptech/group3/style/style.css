@@ -1,0 +1,61 @@
+.border-10 {
+    -fx-background-radius: 10px;
+}
+
+/* Phần liên quan đến TableView */
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .filler,
+.table-view .corner,
+.table-view .column-header,
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background,
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+/* scroll-style.css */
+.table-view .scroll-bar:horizontal,
+.table-view .scroll-bar:vertical {
+    -fx-background-color: #e0e0e0; /* Màu nền của thanh cuộn */
+}
+
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to right, #bfccb5, #b3c5b1, #a8bfad, #9db8a9, #93b1a6);
+    -fx-text-fill: white;
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #93f9b911;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #93f9b911;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #1dbbdd11;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-cell {
+    -fx-alignment: CENTER;
+}
